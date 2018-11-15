@@ -77,7 +77,7 @@ options: zxc, dogs
 question: Which awdawd is better?
             </textarea>
             <br/>
-            <button id="start">Start Questionnaire</button>
+            <button class="uk-button uk-button-primary" id="start">Start Questionnaire</button>
         `;
 
         this.element.querySelector("#start").addEventListener("click", this.onStartClick )
