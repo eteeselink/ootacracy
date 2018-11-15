@@ -1,4 +1,5 @@
 import {Results} from './Results.js';
+import {results} from './results-mock.js'
 
 export class Poll {
     /**
@@ -23,7 +24,7 @@ export class Poll {
             ev.preventDefault();
 
             const page = new Results(this.element);
-            page.render("results should be here");
+            page.render(results);
         })
     }
 }
