@@ -30,7 +30,10 @@ export class Results {
         }
         for(var i of q_arr)  {
             this.element.innerHTML += `
-            <br></br> <text>${i}</text> <br></br>
+            </br> <text>${i[0]}</text></br>
+            </br> <text>${i[1][0]}</text> <text>${i[2][0]}</text>
+            <text>${i[1][1]}</text> <text>${i[2][1]}</text>
+            
             `   ;
         };
         
