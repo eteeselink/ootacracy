@@ -1,5 +1,8 @@
 OOTACRACY
 =========
+Please add your username to the right column in this google sheet:
+https://docs.google.com/spreadsheets/d/1gEqj7WCNH1S3QSgbHoyUQ9GNf2QHdLidXM3rbxqEhw0/edit?usp=sharing
+
 This is a little starter project for the OOTI 2018 Continuous Integration class.
 
 We're going to do a pure JavaScript application, that runs 100% in the browser.
