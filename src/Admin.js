@@ -10,7 +10,17 @@ export class Admin {
 
     render(name) {
         this.element.innerHTML = `
-            <textarea id="question" rows="20" cols="50"></textarea>
+            <textarea id="question" rows="20" cols="50">
+1.
+type: single-choice
+options: cats, dogs
+question: Which one is better?
+
+2.
+type: awd-choice
+options: zxc, dogs
+question: Which awdawd is better?
+            </textarea>
             <br/>
             <button id="start">Start Questionnaire</button>
         `;
@@ -56,15 +66,9 @@ export class Admin {
                 }
             }
             
-            // var question = {type : type, question : question, options : options};
-            // questions.push(question);
-
-
-            console.log(questions);
-            
             //Move to the Poll page
-            // const poll = new Poll(this.element);
-            // poll.render("Here we should put some data for poll to use");
+            const poll = new Poll(this.element);
+            poll.render(questions);
         })
     }
 }
