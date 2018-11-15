@@ -8,11 +8,13 @@ export class Results {
         this.element = element;
     }
 
-    render(name) {
+    render(results) {
         this.element.innerHTML = `
             RESULTS PAGE<br>
             <button id="btn-next">Restart</button>
+            ${JSON.stringify(results)}
         `;
+        console.log(results);
 
         this.element.querySelector("#btn-next").addEventListener("click", ev => {
             // always add `preventDefault` in an event handler. otherwise, the browser
@@ -20,7 +22,6 @@ export class Results {
             // which causes the entire page to reload.
             // since we have no server, we don't want that :-)
             ev.preventDefault();
-            
             const page = new Admin(this.element);
             page.render();
         })
