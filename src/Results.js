@@ -15,6 +15,15 @@ export class Results {
             ${JSON.stringify(results)}
         `;
         console.log(results);
+        for(var result of results){
+            const answers = result.answers;
+            var counts = Object.keys(result.options).map(key => 0);
+             
+            for(var answer of answers){
+                counts[answer]=counts[answer]+1;
+            }
+            console.log(counts); 
+        }
 
         this.element.querySelector("#btn-next").addEventListener("click", ev => {
             // always add `preventDefault` in an event handler. otherwise, the browser
