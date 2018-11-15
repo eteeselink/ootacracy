@@ -26,11 +26,22 @@ export class Poll {
         }
 
         this.element.innerHTML += `<br>
-            <button id="btn-next">Submit</button>
-            <button id="btn-next">Final Results</button>
+            <button id="btn-submit">Submit</button>
+            <button id="btn-results">Final Results</button>
         `;
 
-        this.element.querySelector("#btn-next").addEventListener("click", ev => {
+        this.element.querySelector("#btn-submit").addEventListener("click", ev => {
+            // always add `preventDefault` in an event handler. otherwise, the browser
+            // will do some default action which usually means submitting the data to the server, 
+            // which causes the entire page to reload.
+            // since we have no server, we don't want that :-)
+            ev.preventDefault();
+            //const poll = new Poll(this.element);
+            //poll.render(questions);
+            //page.render("Next person");
+        })
+
+        this.element.querySelector("#btn-results").addEventListener("click", ev => {
             // always add `preventDefault` in an event handler. otherwise, the browser
             // will do some default action which usually means submitting the data to the server, 
             // which causes the entire page to reload.
