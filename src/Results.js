@@ -1,6 +1,6 @@
-import {Results} from './Results.js';
+import {Admin} from "./Admin.js";
 
-export class Poll {
+export class Results {
     /**
      * @param {HTMLElement} element 
      */
@@ -10,9 +10,8 @@ export class Poll {
 
     render(name) {
         this.element.innerHTML = `
-            POLL PAGE
-
-            <button id="btn-next">Next</button>
+            RESULTS PAGE<br>
+            <button id="btn-next">Restart</button>
         `;
 
         this.element.querySelector("#btn-next").addEventListener("click", ev => {
@@ -21,9 +20,9 @@ export class Poll {
             // which causes the entire page to reload.
             // since we have no server, we don't want that :-)
             ev.preventDefault();
-
-            const page = new Results(this.element);
-            page.render("results should be here");
+            
+            const page = new Admin(this.element);
+            page.render();
         })
     }
 }
