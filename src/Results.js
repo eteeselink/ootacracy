@@ -12,18 +12,28 @@ export class Results {
         this.element.innerHTML = `
             RESULTS PAGE<br>
             <button id="btn-next">Restart</button>
-            ${JSON.stringify(results)}
         `;
-        console.log(results);
+        //console.log(results);
+        var q_arr=[];
+        var opt_arr=[];
+        var ans_arr=[];
         for(var result of results){
             const answers = result.answers;
             var counts = Object.keys(result.options).map(key => 0);
              
             for(var answer of answers){
                 counts[answer]=counts[answer]+1;
-            }
-            console.log(counts); 
+            } 
+            q_arr.push([result.question,result.options,counts]);
+            //opt_arr.push(result.options);
+            //ans_arr.push(counts);    
         }
+        for(var i of q_arr)  {
+            this.element.innerHTML += `
+            <br></br> <text>${i}</text> <br></br>
+            `   ;
+        };
+        
 
         this.element.querySelector("#btn-next").addEventListener("click", ev => {
             // always add `preventDefault` in an event handler. otherwise, the browser
@@ -36,3 +46,7 @@ export class Results {
         })
     }
 }
+
+
+
+

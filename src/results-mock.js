@@ -9,7 +9,7 @@ const results = [
         type: "single-choice",
         question: "do you like dogs or cats",
         options: ["cats","dogs","neither"],
-        answers: [0, 1 ,0, 0, 1, 2 ]
+        answers: [1, 1 ,0, 0, 1, 2 ]
     },
 
 ];
