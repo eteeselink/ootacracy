@@ -1,6 +1,6 @@
-OOTICRACY
+OOTACRACY
 =========
-This is a little starter project for the OOTI 2017 Continuous Integration class.
+This is a little starter project for the OOTI 2018 Continuous Integration class.
 
 We're going to do a pure JavaScript application, that runs 100% in the browser.
 Modern JavaScript is a pretty powerful programming language, and the ecosystem is huge. This will help you for sure during your first project. 
@@ -21,16 +21,6 @@ Typical flow:
 
 Requirements
 ------------
-tl;dr are if you use a package manager such as [scoop](http://scoop.sh/):
-```
-> scoop install devd
-> scoop install git
-> scoop bucket add extras
-> scoop install vscode
-```
-
-### Or, the manual steps
-
 Browsers don't do JavaScript very well when opening a HTML file from the the file system. Therefore, you must install a little webserver:
 
 * Visit https://github.com/cortesi/devd/releases and download devd for your OS
