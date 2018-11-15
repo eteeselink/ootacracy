@@ -34,7 +34,7 @@ question: Which awdawd is better?
 
             var questions = [];
 
-            var text = document.getElementById("question").value;
+            var text = document.getElementById("question").value.trim();
             
             var arrayOfLines = text.split("\n");
             
