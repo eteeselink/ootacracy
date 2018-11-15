@@ -37,7 +37,6 @@ export class Admin {
                         questions.push(question);
                     }
                 }
-                console.log(JSON.stringify(questions));
                 return questions;
 
         }  
