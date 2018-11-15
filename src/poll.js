@@ -9,7 +9,6 @@ export class Poll {
     }
 
     render(questions) {
-        var results=[];
         this.element.innerHTML="<h1>POLL PAGE<h1>";
 
         for(var question of questions){
@@ -17,19 +16,14 @@ export class Poll {
             for(const option of question.options){
                 this.element.innerHTML+= `<input type="radio" name="${question.question}" value="${question.question}"/> ${option} <br>`
             }
-
         }
 
-        console.log(questions)
+        var results=[];
         for (var i = 0; i < questions.length; i++) { 
-            var obj={}
-            obj.type=questions[i].type;
-            obj.question=questions[0].question
-            obj.results=[]
-            results.push(obj)
+            var obj={}; obj.type=questions[i].type;
+            obj.question=questions[0].question;
+            obj.results=[]; results.push(obj)
         }
-
-        //const stringhkg=`<button id="btn-next">Submit</button>`;
 
         this.element.innerHTML += `<br>
             <button id="btn-next">Submit</button>
@@ -44,7 +38,8 @@ export class Poll {
             ev.preventDefault();
 
             const page = new Results(this.element);
-            page.render("results should be here");
+            page.render(results);
+            //page.render("results should be here");
         })
     }
 }
