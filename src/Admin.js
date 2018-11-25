@@ -1,5 +1,4 @@
 import {Poll} from "./Poll.js";
-
 export class Admin {
     /**
      * @param {HTMLElement} element 
@@ -63,7 +62,7 @@ export class Admin {
         }
     }
 
-    render(name) {
+    render(name) { 
         this.element.innerHTML = `
             <textarea id="question" rows="20" cols="50">
 1.

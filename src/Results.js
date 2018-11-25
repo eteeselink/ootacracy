@@ -8,23 +8,24 @@ export class Results {
         this.element = element;
     }
 
-    render(results) {
+    render(votes) {
         this.element.innerHTML = `
             RESULTS PAGE<br>
             <button id="btn-next">Restart</button>
         `;
-        //console.log(results);
+        
         var q_arr=[];
         var opt_arr=[];
         var ans_arr=[];
-        for(var result of results){
-            const answers = result.answers;
-            var counts = Object.keys(result.options).map(key => 0);
+        for(var vote of votes){
+            var answers = vote.results;
+            console.log("answers",answers);
+            var counts = Object.keys(vote.options).map(key => 0);
              
             for(var answer of answers){
                 counts[answer]=counts[answer]+1;
             } 
-            q_arr.push([result.question,result.options,counts]);
+            q_arr.push([vote.question,vote.options,counts]);
             //opt_arr.push(result.options);
             //ans_arr.push(counts);    
         }
@@ -44,8 +45,8 @@ export class Results {
             // which causes the entire page to reload.
             // since we have no server, we don't want that :-)
             ev.preventDefault();
-            const page = new Admin(this.element);
-            page.render();
+            const adm = new Admin(this.element);
+            adm.render(name);
         })
     }
 }
